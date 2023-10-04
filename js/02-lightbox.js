@@ -34,18 +34,23 @@ const galleryMarkup = galleryItems
 
 galleryList.innerHTML = galleryMarkup;
 
-galleryList.addEventListener('click', openBigCard);
+// galleryList.addEventListener('click', openBigCard);
 
-function openBigCard(evn) {
-  if (!evn.target.classList.contains('gallery__image')) {
-    return;
-  } else {
-    evn.preventDefault();
+// function openBigCard(evn) {
+//   if (!evn.target.classList.contains('gallery__image')) {
+//     return;
+//   } else {
+//     evn.preventDefault();
 
-    const lightbox = new SimpleLightbox('.gallery a', {
-      captionsData: 'alt',
-      captionDelay: 250,
-      captionPosition: 'bottom',
-    });
-  }
-}
+//     const lightbox = new SimpleLightbox('.gallery a', {
+//       captionsData: 'alt',
+//       captionDelay: 250,
+//       captionPosition: 'bottom',
+//     });
+//   }
+// }
+const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+    captionPosition: 'bottom',
+  });

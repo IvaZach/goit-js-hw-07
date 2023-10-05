@@ -57,13 +57,16 @@ function openBigCard(evn) {
       {
         onShow: instance => {
           instance.element().querySelector('.modal').onclick = instance.close;
-
-          document.addEventListener('keydown', e =>
-            e.key === 'Escape' ? instance.close() : false
-          );
+          document.addEventListener('keydown', clickEscape);
         },
+        onClose: instance => document.removeEventListener('keydown', clickEscape),
       }
     );
+
     instance.show();
+
+    function clickEscape(e) {
+      e.key === 'Escape' ? instance.close() : false;
+    }
   }
 }
